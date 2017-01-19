@@ -21,25 +21,27 @@ class Student_accnt(Student):
         self.fee_target = fee_target
 
     def fee_balance(self,total_fee_paid):
-        fee_target = 20000
-        balance = 0
-        #total_fee_paid = fee_deposit(amount)
-        balance = fee_target - total_fee_paid
-        print balance
-
-    def fee_deposit(self,amount):
-        self.total_fee_paid = total_fee_paid + amount
-        return total_fee_paid
+        balance = self.fee_target - total_fee_paid
+        print "remaining balance is = " + str(balance)
 
 class Student_records(Student):
     """docstring forStudent_records"""
-    def perfomance(self, cat_one,cat_two,exams):
-        self.marks = cat_one + cat_two + exams
+    def __init__(self, cat_one=0,cat_two=0,exams=0):
+        self.cat_one = cat_one
+        self.cat_two = cat_two
+        self.exams = exams
+
+    def perfomance(self):
+        marks = 0
+        average = 0
+        marks = self.cat_one + self.cat_two + self.exams
         average = marks // 3
-        return average
+        print "average marks = " + str(average)
 
 #angela = Student("angela","assa", "2e2e")
 angela = Student_accnt()
 #angela.display_name()
-ange
+
 angela.fee_balance(10000)
+dan = Student_records(123,131,322)
+dan.perfomance()
