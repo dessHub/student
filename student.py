@@ -1,10 +1,15 @@
+
 class Student():
+
+class Student(Object):
+
 
     def __init__(self, first_name, last_name,adm_no):
         """Create a student account with personal details."""
         self.first_name = first_name
         self.last_name = last_name
         self.adm_no = adm_no
+
 
     def display_recors(self):
         std_details = {}
